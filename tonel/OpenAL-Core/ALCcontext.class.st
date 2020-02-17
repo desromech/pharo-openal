@@ -20,30 +20,25 @@ ALCcontext >> currentDuring: aBlock [
 
 { #category : #initialize }
 ALCcontext >> destroy [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alcDestroyContext ( self ) )
+	^ self ffiCall: #( void alcDestroyContext ( self ) )
 ]
 
 { #category : #accessing }
 ALCcontext >> device [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alcGetContextsDevice ( self ) )
+	^ self ffiCall: #( void alcGetContextsDevice ( self ) )
 ]
 
 { #category : #'current context' }
 ALCcontext >> makeCurrent [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( ALCboolean alcMakeContextCurrent ( self ) )
+	^ self ffiCall: #( ALCboolean alcMakeContextCurrent ( self ) )
 ]
 
 { #category : #'pause resume' }
 ALCcontext >> process [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alcProcessContext ( self ) )
+	^ self ffiCall: #( void alcProcessContext ( self ) )
 ]
 
 { #category : #'pause resume' }
 ALCcontext >> suspend [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alcSuspendContext ( self ) )
+	^ self ffiCall: #( void alcSuspendContext ( self ) )
 ]

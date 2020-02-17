@@ -17,44 +17,37 @@ Class {
 
 { #category : #buffers }
 OpenAL class >> buffer3f: bid param: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alBuffer3f ( ALuint sid , ALenum param , ALfloat value1 , ALfloat value2 , ALfloat value3 ) )
+	^ self ffiCall: #( void alBuffer3f ( ALuint sid , ALenum param , ALfloat value1 , ALfloat value2 , ALfloat value3 ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> buffer3i: bid param: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alBuffer3i ( ALuint sid , ALenum param , ALint value1 , ALint value2 , ALint value3 ) )
+	^ self ffiCall: #( void alBuffer3i ( ALuint sid , ALenum param , ALint value1 , ALint value2 , ALint value3 ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> bufferData: bid format: bufferFormat data: data size: size freq: freq [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alBufferData ( ALuint bid , ALenum bufferFormat , ALvoid* data , ALsizei size , ALsizei freq ) )
+	^ self ffiCall: #( void alBufferData ( ALuint bid , ALenum bufferFormat , ALvoid* data , ALsizei size , ALsizei freq ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> bufferf: bid param: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alBufferf ( ALuint sid , ALenum param , ALfloat value ) )
+	^ self ffiCall: #( void alBufferf ( ALuint sid , ALenum param , ALfloat value ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> bufferfv: bid param: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alBufferfv ( ALuint sid , ALenum param , ALfloat* values ) )
+	^ self ffiCall: #( void alBufferfv ( ALuint sid , ALenum param , ALfloat* values ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> bufferi: bid param: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alBufferi ( ALuint sid , ALenum param , ALint value ) )
+	^ self ffiCall: #( void alBufferi ( ALuint sid , ALenum param , ALint value ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> bufferiv: bid param: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alBufferiv ( ALuint sid , ALenum param , ALint* values ) )
+	^ self ffiCall: #( void alBufferiv ( ALuint sid , ALenum param , ALint* values ) )
 ]
 
 { #category : #'library path' }
@@ -75,8 +68,7 @@ OpenAL class >> deleteBuffer: buffer [
 
 { #category : #buffers }
 OpenAL class >> deleteBuffers: n buffers: buffers [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alDeleteBuffers ( ALsizei n , ALuint* buffers ) )
+	^ self ffiCall: #( void alDeleteBuffers ( ALsizei n , ALuint* buffers ) )
 ]
 
 { #category : #sources }
@@ -91,38 +83,32 @@ OpenAL class >> deleteSource: source [
 
 { #category : #sources }
 OpenAL class >> deleteSources: n sources: sources [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alDeleteSources ( ALsizei n , ALuint* sources ) )
+	^ self ffiCall: #( void alDeleteSources ( ALsizei n , ALuint* sources ) )
 ]
 
 { #category : #'enable/disable' }
 OpenAL class >> disable: capability [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alDisable ( ALenum capability ) )
+	^ self ffiCall: #( void alDisable ( ALenum capability ) )
 ]
 
 { #category : #'global parameters' }
 OpenAL class >> distanceModel: distanceModel [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alDistanceModel ( ALenum distanceModel ) )
+	^ self ffiCall: #( void alDistanceModel ( ALenum distanceModel ) )
 ]
 
 { #category : #'global parameters' }
 OpenAL class >> dopplerFactor: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alDopplerFactor ( ALfloat value ) )
+	^ self ffiCall: #( void alDopplerFactor ( ALfloat value ) )
 ]
 
 { #category : #'global parameters' }
 OpenAL class >> dopplerVelocity: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alDopplerVelocity ( ALfloat value ) )
+	^ self ffiCall: #( void alDopplerVelocity ( ALfloat value ) )
 ]
 
 { #category : #'enable/disable' }
 OpenAL class >> enable: capability [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alEnable ( ALenum capability ) )
+	^ self ffiCall: #( void alEnable ( ALenum capability ) )
 ]
 
 { #category : #'library path' }
@@ -160,8 +146,7 @@ OpenAL class >> genBuffer [
 
 { #category : #buffers }
 OpenAL class >> genBuffers: n buffers: buffers [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGenBuffers ( ALsizei n , ALuint* buffers ) )
+	^ self ffiCall: #( void alGenBuffers ( ALsizei n , ALuint* buffers ) )
 ]
 
 { #category : #sources }
@@ -176,242 +161,202 @@ OpenAL class >> genSource [
 
 { #category : #sources }
 OpenAL class >> genSources: n sources: sources [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGenSources ( ALsizei n , ALuint* sources ) )
+	^ self ffiCall: #( void alGenSources ( ALsizei n , ALuint* sources ) )
 ]
 
 { #category : #'state retrieval' }
 OpenAL class >> getBoolean: param [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( ALboolean alGetBoolean ( ALenum param ) )
+	^ self ffiCall: #( ALboolean alGetBoolean ( ALenum param ) )
 ]
 
 { #category : #'state retrieval' }
 OpenAL class >> getBooleanv: param data: data [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetBooleanv ( ALenum param , ALboolean data) )
+	^ self ffiCall: #( void alGetBooleanv ( ALenum param , ALboolean data) )
 ]
 
 { #category : #buffers }
 OpenAL class >> getBuffer3f: bid param: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetBuffer3f ( ALuint sid , ALenum param , ALfloat* value1 , ALfloat* value2 , ALfloat* value3 ) )
+	^ self ffiCall: #( void alGetBuffer3f ( ALuint sid , ALenum param , ALfloat* value1 , ALfloat* value2 , ALfloat* value3 ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> getBuffer3i: bid param: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetBuffer3i ( ALuint sid , ALenum param , ALint* value1 , ALint* value2 , ALint* value3 ) )
+	^ self ffiCall: #( void alGetBuffer3i ( ALuint sid , ALenum param , ALint* value1 , ALint* value2 , ALint* value3 ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> getBufferf: bid param: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetBufferf ( ALuint sid , ALenum param , ALfloat* value ) )
+	^ self ffiCall: #( void alGetBufferf ( ALuint sid , ALenum param , ALfloat* value ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> getBufferfv: bid param: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetBufferfv ( ALuint sid , ALenum param , ALfloat* values ) )
+	^ self ffiCall: #( void alGetBufferfv ( ALuint sid , ALenum param , ALfloat* values ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> getBufferi: bid param: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetBufferi ( ALuint sid , ALenum param , ALint* value ) )
+	^ self ffiCall: #( void alGetBufferi ( ALuint sid , ALenum param , ALint* value ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> getBufferiv: bid param: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetBufferiv ( ALuint sid , ALenum param , ALint* values ) )
+	^ self ffiCall: #( void alGetBufferiv ( ALuint sid , ALenum param , ALint* values ) )
 ]
 
 { #category : #'state retrieval' }
 OpenAL class >> getDouble: param [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( ALdouble alGetDouble ( ALenum param ) )
+	^ self ffiCall: #( ALdouble alGetDouble ( ALenum param ) )
 ]
 
 { #category : #'state retrieval' }
 OpenAL class >> getDoublev: param data: data [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetDoublev ( ALenum param , ALdouble data) )
+	^ self ffiCall: #( void alGetDoublev ( ALenum param , ALdouble data) )
 ]
 
 { #category : #extensions }
 OpenAL class >> getEnumValue: enumName [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( ALCenum alGetEnumValue ( String enumName ) )
+	^ self ffiCall: #( ALCenum alGetEnumValue ( String enumName ) )
 ]
 
 { #category : #'state retrieval' }
 OpenAL class >> getError [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( ALenum alGetError ( ) )
+	^ self ffiCall: #( ALenum alGetError ( ) )
 ]
 
 { #category : #'state retrieval' }
 OpenAL class >> getFloat: param [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( ALfloat alGetFloat ( ALenum param ) )
+	^ self ffiCall: #( ALfloat alGetFloat ( ALenum param ) )
 ]
 
 { #category : #'state retrieval' }
 OpenAL class >> getFloatv: param data: data [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetFloatv ( ALenum param , ALfloat data) )
+	^ self ffiCall: #( void alGetFloatv ( ALenum param , ALfloat data) )
 ]
 
 { #category : #'state retrieval' }
 OpenAL class >> getInteger: param [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( ALint alGetInteger ( ALenum param ) )
+	^ self ffiCall: #( ALint alGetInteger ( ALenum param ) )
 ]
 
 { #category : #'state retrieval' }
 OpenAL class >> getIntegerv: param data: data [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetIntegerv ( ALenum param , ALint data) )
+	^ self ffiCall: #( void alGetIntegerv ( ALenum param , ALint data) )
 ]
 
 { #category : #listener }
 OpenAL class >> getListener3f: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetListener3f ( ALenum param , ALfloat* value1 , ALfloat* value2 , ALfloat* value3 ) )
+	^ self ffiCall: #( void alGetListener3f ( ALenum param , ALfloat* value1 , ALfloat* value2 , ALfloat* value3 ) )
 ]
 
 { #category : #listener }
 OpenAL class >> getListener3i: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetListener3i ( ALenum param , ALint* value1 , ALint* value2 , ALint* value3 ) )
+	^ self ffiCall: #( void alGetListener3i ( ALenum param , ALint* value1 , ALint* value2 , ALint* value3 ) )
 ]
 
 { #category : #listener }
 OpenAL class >> getListenerf: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetListenerf ( ALenum param , ALfloat* value ) )
+	^ self ffiCall: #( void alGetListenerf ( ALenum param , ALfloat* value ) )
 ]
 
 { #category : #listener }
 OpenAL class >> getListenerfv: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetListenerfv ( ALenum param , ByteArray values ) )
+	^ self ffiCall: #( void alGetListenerfv ( ALenum param , ByteArray values ) )
 ]
 
 { #category : #listener }
 OpenAL class >> getListeneri: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetListeneri ( ALenum param , ALint* value ) )
+	^ self ffiCall: #( void alGetListeneri ( ALenum param , ALint* value ) )
 ]
 
 { #category : #listener }
 OpenAL class >> getListeneriv: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetListeneriv ( ALenum param , ALint* values ) )
+	^ self ffiCall: #( void alGetListeneriv ( ALenum param , ALint* values ) )
 ]
 
 { #category : #extensions }
 OpenAL class >> getProcAddress: extensionName [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void* alGetProcAddress ( String extensionName ) )
+	^ self ffiCall: #( void* alGetProcAddress ( String extensionName ) )
 ]
 
 { #category : #sources }
 OpenAL class >> getSource3f: sid param: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetSource3f ( ALuint sid , ALenum param , ALfloat* value1 , ALfloat* value2 , ALfloat* value3 ) )
+	^ self ffiCall: #( void alGetSource3f ( ALuint sid , ALenum param , ALfloat* value1 , ALfloat* value2 , ALfloat* value3 ) )
 ]
 
 { #category : #sources }
 OpenAL class >> getSource3i: sid param: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetSource3i ( ALuint sid , ALenum param , ALint* value1 , ALint* value2 , ALint* value3 ) )
+	^ self ffiCall: #( void alGetSource3i ( ALuint sid , ALenum param , ALint* value1 , ALint* value2 , ALint* value3 ) )
 ]
 
 { #category : #sources }
 OpenAL class >> getSourcef: sid param: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetSourcef ( ALuint sid , ALenum param , ALfloat* value ) )
+	^ self ffiCall: #( void alGetSourcef ( ALuint sid , ALenum param , ALfloat* value ) )
 ]
 
 { #category : #sources }
 OpenAL class >> getSourcefv: sid param: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetSourcefv ( ALuint sid , ALenum param , ALfloat* values ) )
+	^ self ffiCall: #( void alGetSourcefv ( ALuint sid , ALenum param , ALfloat* values ) )
 ]
 
 { #category : #sources }
 OpenAL class >> getSourcei: sid param: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetSourcei ( ALuint sid , ALenum param , ALint* value ) )
+	^ self ffiCall: #( void alGetSourcei ( ALuint sid , ALenum param , ALint* value ) )
 ]
 
 { #category : #sources }
 OpenAL class >> getSourceiv: sid param: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alGetSourceiv ( ALuint sid , ALenum param , ALint* values ) )
+	^ self ffiCall: #( void alGetSourceiv ( ALuint sid , ALenum param , ALint* values ) )
 ]
 
 { #category : #'state retrieval' }
 OpenAL class >> getString: param [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( String alGetString ( ALenum param ) )
+	^ self ffiCall: #( String alGetString ( ALenum param ) )
 ]
 
 { #category : #buffers }
 OpenAL class >> isBuffer: bid [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( ALboolean alIsBuffer ( ALuint bid ) )
+	^ self ffiCall: #( ALboolean alIsBuffer ( ALuint bid ) )
 ]
 
 { #category : #extensions }
 OpenAL class >> isExtensionPresent: extensionName [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( ALCboolean alIsExtensionPresent ( String extensionName ) )
+	^ self ffiCall: #( ALCboolean alIsExtensionPresent ( String extensionName ) )
 ]
 
 { #category : #sources }
 OpenAL class >> isSource: sid [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( ALboolean alIsSource ( ALuint sid ) )
+	^ self ffiCall: #( ALboolean alIsSource ( ALuint sid ) )
 ]
 
 { #category : #listener }
 OpenAL class >> listener3f: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alListener3f ( ALenum param , ALfloat value1 , ALfloat value2 , ALfloat value3 ) )
+	^ self ffiCall: #( void alListener3f ( ALenum param , ALfloat value1 , ALfloat value2 , ALfloat value3 ) )
 ]
 
 { #category : #listener }
 OpenAL class >> listener3i: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alListener3i ( ALenum param , ALint value1 , ALint value2 , ALint value3 ) )
+	^ self ffiCall: #( void alListener3i ( ALenum param , ALint value1 , ALint value2 , ALint value3 ) )
 ]
 
 { #category : #listener }
 OpenAL class >> listenerf: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alListenerf ( ALenum param , ALfloat value ) )
+	^ self ffiCall: #( void alListenerf ( ALenum param , ALfloat value ) )
 ]
 
 { #category : #listener }
 OpenAL class >> listenerfv: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alListenerfv ( ALenum param , ByteArray values ) )
+	^ self ffiCall: #( void alListenerfv ( ALenum param , ByteArray values ) )
 ]
 
 { #category : #listener }
 OpenAL class >> listeneri: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alListeneri ( ALenum param , ALint value ) )
+	^ self ffiCall: #( void alListeneri ( ALenum param , ALint value ) )
 ]
 
 { #category : #listener }
 OpenAL class >> listeneriv: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alListeneriv ( ALenum param , ALint* values ) )
+	^ self ffiCall: #( void alListeneriv ( ALenum param , ALint* values ) )
 ]
 
 { #category : #'library path' }
@@ -425,102 +370,85 @@ OpenAL class >> loadLibrary [
 
 { #category : #sources }
 OpenAL class >> source3f: sid param: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSource3f ( ALuint sid , ALenum param , ALfloat value1 , ALfloat value2 , ALfloat value3 ) )
+	^ self ffiCall: #( void alSource3f ( ALuint sid , ALenum param , ALfloat value1 , ALfloat value2 , ALfloat value3 ) )
 ]
 
 { #category : #sources }
 OpenAL class >> source3i: sid param: param value: value1 value: value2 value: value3 [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSource3i ( ALuint sid , ALenum param , ALint value1 , ALint value2 , ALint value3 ) )
+	^ self ffiCall: #( void alSource3i ( ALuint sid , ALenum param , ALint value1 , ALint value2 , ALint value3 ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourcePause: sid [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourcePause ( ALuint sid ) )
+	^ self ffiCall: #( void alSourcePause ( ALuint sid ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourcePausev: n sources: sources [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourcePausev ( ALsizei n , ALuint* sources ) )
+	^ self ffiCall: #( void alSourcePausev ( ALsizei n , ALuint* sources ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourcePlay: sid [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourcePlay ( ALuint sid ) )
+	^ self ffiCall: #( void alSourcePlay ( ALuint sid ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourcePlayv: n sources: sources [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourcePlayv ( ALsizei n , ALuint* sources ) )
+	^ self ffiCall: #( void alSourcePlayv ( ALsizei n , ALuint* sources ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourceQueueBuffers: sid numEntries: numEntries buffers: buffers [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourceQueueBuffers ( ALuint sid , ALsizei numEntries , ALuint* buffers ) )
+	^ self ffiCall: #( void alSourceQueueBuffers ( ALuint sid , ALsizei numEntries , ALuint* buffers ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourceRewindv: n sources: sources [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourceRewindv ( ALsizei n , ALuint* sources ) )
+	^ self ffiCall: #( void alSourceRewindv ( ALsizei n , ALuint* sources ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourceRewing: sid [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourceRewind ( ALuint sid ) )
+	^ self ffiCall: #( void alSourceRewind ( ALuint sid ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourceStop: sid [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourceStop ( ALuint sid ) )
+	^ self ffiCall: #( void alSourceStop ( ALuint sid ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourceStopv: n sources: sources [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourceStopv ( ALsizei n , ALuint* sources ) )
+	^ self ffiCall: #( void alSourceStopv ( ALsizei n , ALuint* sources ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourceUnqueueBuffers: sid numEntries: numEntries buffers: buffers [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourceUnqueueBuffers ( ALuint sid , ALsizei numEntries , ALuint* buffers ) )
+	^ self ffiCall: #( void alSourceUnqueueBuffers ( ALuint sid , ALsizei numEntries , ALuint* buffers ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourcef: sid param: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourcef ( ALuint sid , ALenum param , ALfloat value ) )
+	^ self ffiCall: #( void alSourcef ( ALuint sid , ALenum param , ALfloat value ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourcefv: sid param: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourcefv ( ALuint sid , ALenum param , ALfloat* values ) )
+	^ self ffiCall: #( void alSourcefv ( ALuint sid , ALenum param , ALfloat* values ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourcei: sid param: param value: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourcei ( ALuint sid , ALenum param , ALint value ) )
+	^ self ffiCall: #( void alSourcei ( ALuint sid , ALenum param , ALint value ) )
 ]
 
 { #category : #sources }
 OpenAL class >> sourceiv: sid param: param values: values [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSourceiv ( ALuint sid , ALenum param , ALint* values ) )
+	^ self ffiCall: #( void alSourceiv ( ALuint sid , ALenum param , ALint* values ) )
 ]
 
 { #category : #'global parameters' }
 OpenAL class >> speedOfSound: value [
-	<primitive: #primitiveNativeCall module: #NativeBoostPlugin error: errorCode>
-	^ self nbCall: #( void alSpeedOfSound ( ALfloat value ) )
+	^ self ffiCall: #( void alSpeedOfSound ( ALfloat value ) )
 ]
