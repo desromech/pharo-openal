@@ -130,7 +130,7 @@ OpenAL class >> findOpenAL [
 	'/usr/lib64/libopenal.so'
 	'/usr/lib/x86_64-linux-gnu/libopenal.so'
 	'/usr/lib/x86_64-linux-gnu/libopenal.so.1'
-	) do: [ :nm | [(self checkLibraryName: nm) ifTrue: [ ^ nm ] ] ifError: [nil] ].
+	) do: [ :nm | [(self checkLibraryName: nm) ifTrue: [ ^ nm ] ] on: Error do: [nil] ].
 	self error: 'Failed to find openal library.'
 ]
 
