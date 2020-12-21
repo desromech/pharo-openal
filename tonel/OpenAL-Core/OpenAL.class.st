@@ -346,7 +346,7 @@ OpenAL class >> listenerf: param value: value [
 
 { #category : #listener }
 OpenAL class >> listenerfv: param values: values [
-	^ self ffiCall: #( void alListenerfv ( ALenum param , ByteArray values ) )
+	^ self ffiCall: #( void alListenerfv ( ALenum param , void* values ) )
 ]
 
 { #category : #listener }
