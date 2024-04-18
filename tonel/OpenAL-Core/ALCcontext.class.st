@@ -15,7 +15,7 @@ Class {
 ALCcontext >> currentDuring: aBlock [
 	"TODO: Use a mutex"
 	self makeCurrent.
-	aBlock value.
+	^ aBlock value.
 ]
 
 { #category : #initialize }
