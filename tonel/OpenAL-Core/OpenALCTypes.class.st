@@ -2,8 +2,8 @@
 I represent the datatypes used by the OpenAL context functions.
 "
 Class {
-	#name : #OpenALCTypes,
-	#superclass : #SharedPool,
+	#name : 'OpenALCTypes',
+	#superclass : 'SharedPool',
 	#classVars : [
 		'ALCboolean',
 		'ALCbyte',
@@ -19,10 +19,12 @@ Class {
 		'ALCushort',
 		'ALCvoid'
 	],
-	#category : #'OpenAL-Core-Context'
+	#category : 'OpenAL-Core-Context',
+	#package : 'OpenAL-Core',
+	#tag : 'Context'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 OpenALCTypes class >> initialize [
 	"
 	self initialize.

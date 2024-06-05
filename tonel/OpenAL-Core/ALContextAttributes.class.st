@@ -2,8 +2,8 @@
 I represent the OpenAL context creation attributes.
 "
 Class {
-	#name : #ALContextAttributes,
-	#superclass : #Object,
+	#name : 'ALContextAttributes',
+	#superclass : 'Object',
 	#instVars : [
 		'frequency',
 		'refresh',
@@ -18,20 +18,22 @@ Class {
 		'OpenALCConstants',
 		'OpenALCTypes'
 	],
-	#category : #'OpenAL-Core-Context'
+	#category : 'OpenAL-Core-Context',
+	#package : 'OpenAL-Core',
+	#tag : 'Context'
 }
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 ALContextAttributes class >> defaultFrequency [
 	^ DefaultFrequency ifNil: [ DefaultFrequency := 44800 ].
 ]
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 ALContextAttributes class >> defaultFrequency: anInteger [
 	DefaultFrequency := anInteger
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ALContextAttributes >> addAttribute: attribute value: value into: list [
 	value ifNotNil: [ 
 		list add: attribute;
@@ -39,7 +41,7 @@ ALContextAttributes >> addAttribute: attribute value: value into: list [
 	]
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ALContextAttributes >> asList [
 	| list externalList |
 	list := OrderedCollection new.
@@ -54,58 +56,58 @@ ALContextAttributes >> asList [
 	^ externalList
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ALContextAttributes >> frequency [
 	^ frequency
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ALContextAttributes >> frequency: anObject [
 	frequency := anObject
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ALContextAttributes >> initialize [
 	super initialize.
 	frequency := self class defaultFrequency.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ALContextAttributes >> monoSources [
 	^ monoSources
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ALContextAttributes >> monoSources: anObject [
 	monoSources := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ALContextAttributes >> refresh [
 	^ refresh
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ALContextAttributes >> refresh: anObject [
 	refresh := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ALContextAttributes >> stereoSources [
 	^ stereoSources
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ALContextAttributes >> stereoSources: anObject [
 	stereoSources := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ALContextAttributes >> sync [
 	^ sync
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ALContextAttributes >> sync: anObject [
 	sync := anObject
 ]

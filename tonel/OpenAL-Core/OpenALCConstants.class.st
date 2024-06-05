@@ -3,8 +3,8 @@ I represent the constants used by OpenAL Context related functions.
 
 "
 Class {
-	#name : #OpenALCConstants,
-	#superclass : #SharedPool,
+	#name : 'OpenALCConstants',
+	#superclass : 'SharedPool',
 	#classVars : [
 		'ALC_ALL_ATTRIBUTES',
 		'ALC_ALL_DEVICES_SPECIFIER',
@@ -34,10 +34,12 @@ Class {
 		'ALC_SYNC',
 		'ALC_TRUE'
 	],
-	#category : #'OpenAL-Core-Context'
+	#category : 'OpenAL-Core-Context',
+	#package : 'OpenAL-Core',
+	#tag : 'Context'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 OpenALCConstants class >> initialize [
 	"
 	self initialize.

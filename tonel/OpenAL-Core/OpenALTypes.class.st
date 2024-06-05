@@ -2,8 +2,8 @@
 This class provides NativeBoost type definitions for the typedef used in OpenAL.
 "
 Class {
-	#name : #OpenALTypes,
-	#superclass : #SharedPool,
+	#name : 'OpenALTypes',
+	#superclass : 'SharedPool',
 	#classVars : [
 		'ALboolean',
 		'ALbyte',
@@ -19,10 +19,12 @@ Class {
 		'ALushort',
 		'ALvoid'
 	],
-	#category : #'OpenAL-Core-OpenAL-Core'
+	#category : 'OpenAL-Core-OpenAL-Core',
+	#package : 'OpenAL-Core',
+	#tag : 'OpenAL-Core'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 OpenALTypes class >> initialize [
 	"
 	self initialize.

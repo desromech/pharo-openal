@@ -2,8 +2,8 @@
 This class contains all of the constants from AL/al.h
 "
 Class {
-	#name : #OpenALConstants,
-	#superclass : #SharedPool,
+	#name : 'OpenALConstants',
+	#superclass : 'SharedPool',
 	#classVars : [
 		'AL_BITS',
 		'AL_BUFFER',
@@ -71,10 +71,12 @@ Class {
 		'AL_VENDOR',
 		'AL_VERSION'
 	],
-	#category : #'OpenAL-Core-OpenAL-Core'
+	#category : 'OpenAL-Core-OpenAL-Core',
+	#package : 'OpenAL-Core',
+	#tag : 'OpenAL-Core'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 OpenALConstants class >> initialize [
 	"
 	self initialize.

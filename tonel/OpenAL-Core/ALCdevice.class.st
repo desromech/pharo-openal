@@ -2,71 +2,73 @@
 I represent a handle to an OpenAL device.
 "
 Class {
-	#name : #ALCdevice,
-	#superclass : #OpenALHandle,
+	#name : 'ALCdevice',
+	#superclass : 'OpenALHandle',
 	#pools : [
 		'OpenALCConstants',
 		'OpenALCTypes'
 	],
-	#category : #'OpenAL-Core-Context'
+	#category : 'OpenAL-Core-Context',
+	#package : 'OpenAL-Core',
+	#tag : 'Context'
 }
 
-{ #category : #capture }
+{ #category : 'capture' }
 ALCdevice >> captureBuffer: buffer samples: samples [
 	^ self ffiCall: #( void alcCaptureSamples ( self , ALCvoid* buffer , ALCsizei samples) )
 ]
 
-{ #category : #capture }
+{ #category : 'capture' }
 ALCdevice >> captureClose [
 	^ self ffiCall: #( ALCboolean alcCaptureCloseDevice ( self ) )
 ]
 
-{ #category : #capture }
+{ #category : 'capture' }
 ALCdevice >> captureStart [
 	^ self ffiCall: #( void alcCaptureStart ( self ) )
 ]
 
-{ #category : #capture }
+{ #category : 'capture' }
 ALCdevice >> captureStop [
 	^ self ffiCall: #( void alcCaptureStop ( self ) )
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 ALCdevice >> close [
 	^ self ffiCall: #( ALCboolean alcCloseDevice ( self ) )
 ]
 
-{ #category : #'context creation' }
+{ #category : 'context creation' }
 ALCdevice >> createContext: attributeList [
 	^ self ffiCall: #( ALCcontext alcCreateContext ( self , ALCint*  attributeList) )
 ]
 
-{ #category : #getters }
+{ #category : 'getters' }
 ALCdevice >> getEnumValue: enumName [
 	^ self ffiCall: #( ALCenum alcGetEnumValue ( self , String enumName ) )
 ]
 
-{ #category : #getters }
+{ #category : 'getters' }
 ALCdevice >> getError [
 	^ self ffiCall: #( ALCenum alcGetError ( self ) )
 ]
 
-{ #category : #getters }
+{ #category : 'getters' }
 ALCdevice >> getIntegerv: param size: size data: data [
 	^ self ffiCall: #( void alcGetIntegerv ( self , ALCenum param , ALCsizei size , ALCint* data ) )
 ]
 
-{ #category : #extensions }
+{ #category : 'extensions' }
 ALCdevice >> getProcAddress: extensionName [
 	^ self ffiCall: #( void* alcGetProcAddress ( self , String extensionName ) )
 ]
 
-{ #category : #getters }
+{ #category : 'getters' }
 ALCdevice >> getString: param [
 	^ self ffiCall: #( String alcGetString ( self , ALCenum param ) )
 ]
 
-{ #category : #extensions }
+{ #category : 'extensions' }
 ALCdevice >> isExtensionPresent: extensionName [
 	^ self ffiCall: #( ALCboolean alcIsExtensionPresent ( self , String extensionName ) )
 ]

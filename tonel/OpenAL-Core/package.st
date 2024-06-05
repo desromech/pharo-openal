@@ -1,1 +1,1 @@
-Package { #name : #'OpenAL-Core' }
+Package { #name : 'OpenAL-Core' }
